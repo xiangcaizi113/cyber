@@ -32,6 +32,9 @@ cd xMiner-v0.1.15-beta
 # Make solo_mining.sh executable
 chmod +x solo_mining.sh
 
+# Wait for 2 minutes (120 seconds)
+sleep 120
+
 # Run 'miner' process with nohup and output to miner.logs
 nohup ./solo_mining.sh > ~/miner.logs 2>&1 &
 
