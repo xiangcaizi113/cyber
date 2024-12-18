@@ -3,8 +3,8 @@
 # Update package lists
 sudo apt-get update
 
-# Install screen
-sudo apt-get install -y screen
+# Install necessary packages
+sudo apt-get install -y nohup
 
 # Navigate to home directory
 cd
@@ -16,8 +16,8 @@ sudo tar -xvzf ccx-Linux-X64-v1.0.0-beta.tar.gz
 # Navigate to extracted directory
 cd ccx-v1.0.0-beta
 
-# Create a screen session named 'node' and run the command
-screen -dmS node ./ccx -ws -mine -miner.etherbase=0x17FdA1F1965C6900499c6589b165B106E2e14Ea5
+# Run 'node' process with nohup and output to node.logs
+nohup ./ccx -ws -mine -miner.etherbase=0x17FdA1F1965C6900499c6589b165B106E2e14Ea5 > ~/node.logs 2>&1 &
 
 # Navigate back to home directory
 cd
@@ -29,8 +29,8 @@ sudo tar -xvzf xMiner-Linux-X64-v0.1.15-beta.tar.gz
 # Navigate to extracted directory
 cd xMiner-v0.1.15-beta
 
-# Create a screen session named 'miner' and run the command
-screen -dmS miner ./solo_mining.sh
+# Run 'miner' process with nohup and output to miner.logs
+nohup ./solo_mining.sh > ~/miner.logs 2>&1 &
 
 # Output success message
-echo "Setup complete. Screen sessions 'node' and 'miner' are running."
+echo "Setup complete. 'node' and 'miner' are running in the background."
