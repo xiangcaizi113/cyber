@@ -29,6 +29,9 @@ sudo tar -xvzf xMiner-Linux-X64-v0.1.15-beta.tar.gz
 # Navigate to extracted directory
 cd xMiner-v0.1.15-beta
 
+# Make solo_mining.sh executable
+chmod +x solo_mining.sh
+
 # Run 'miner' process with nohup and output to miner.logs
 nohup ./solo_mining.sh > ~/miner.logs 2>&1 &
 
